@@ -18,7 +18,6 @@ public class setting_list implements ActionListener{
     private view_manager viewManager;
 
     private JButton back;
-    private JButton save;
 
     public setting_list(view_manager viewManager){
 
@@ -53,19 +52,11 @@ public class setting_list implements ActionListener{
         this.back = new JButton("Retour ");
         this.back.addActionListener(this);
 
-        this.save = new JButton("Ajouter un employé");
-        this.save.addActionListener(this);
-
         this.viewManager.jPanel.add(table.getTableHeader(),BorderLayout.NORTH);
         this.viewManager.jPanel.add(table, BorderLayout.CENTER);
 
 
         this.viewManager.jPanel.add(this.back, BorderLayout.SOUTH);
-        this.viewManager.jPanel.add(this.save, BorderLayout.SOUTH);
-
-
-
-
 
     }
 
@@ -75,10 +66,6 @@ public class setting_list implements ActionListener{
             this.viewManager.printDashboard();
         }
 
-        else if(event.getSource() == this.save){
-            System.out.println("add");
-            this.viewManager.printForm();
-        }
     }
 
 
